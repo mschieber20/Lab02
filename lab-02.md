@@ -1,17 +1,15 @@
----
-title: "Lab 02 - Plastic waste"
-author: "Marq Schieber"
-date: "2/13/22"
-output: github_document
----
+Lab 02 - Plastic waste
+================
+Marq Schieber
+2/13/22
 
 ## Load packages and data
 
-```{r load-packages, message=FALSE}
+``` r
 library(tidyverse) 
 ```
 
-```{r load-data, message=FALSE}
+``` r
 plastic_waste <- read.csv("data/plastic-waste.csv")
 ```
 
@@ -19,34 +17,53 @@ plastic_waste <- read.csv("data/plastic-waste.csv")
 
 ### Exercise 1
 
-```{r plastic-waste-continent}
+``` r
 ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   geom_histogram(binwidth = 0.2) +
   facet_wrap(~ continent)
+```
 
+    ## Warning: Removed 51 rows containing non-finite values (stat_bin).
+
+![](lab-02_files/figure-gfm/plastic-waste-continent-1.png)<!-- -->
+
+``` r
 ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   geom_density()
+```
 
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/plastic-waste-continent-2.png)<!-- -->
+
+``` r
 ggplot(data = plastic_waste, 
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent, 
                      fill = continent)) +
   geom_density()
-
 ```
 
-They all look relatively similar. Asia and North America appear to have the most waste per capita. 
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/plastic-waste-continent-3.png)<!-- -->
+
+They all look relatively similar. Asia and North America appear to have
+the most waste per capita.
 
 ### Exercise 2
 
-```{r plastic-waste-density}
-
+``` r
 ggplot(data = plastic_waste, 
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent, 
                      fill = continent)) +
   geom_density(alpha = 0.25)
 ```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
 
 ### Exercise 3
 
@@ -56,7 +73,7 @@ Remove this text, and add your answer for Exercise 3 here.
 
 Remove this text, and add your answer for Exercise 4 here.
 
-```{r plastic-waste-violin}
+``` r
 # insert code here
 ```
 
@@ -64,7 +81,7 @@ Remove this text, and add your answer for Exercise 4 here.
 
 Remove this text, and add your answer for Exercise 5 here.
 
-```{r plastic-waste-mismanaged}
+``` r
 # insert code here
 ```
 
@@ -72,7 +89,7 @@ Remove this text, and add your answer for Exercise 5 here.
 
 Remove this text, and add your answer for Exercise 6 here.
 
-```{r plastic-waste-mismanaged-continent}
+``` r
 # insert code here
 ```
 
@@ -80,11 +97,11 @@ Remove this text, and add your answer for Exercise 6 here.
 
 Remove this text, and add your answer for Exercise 7 here.
 
-```{r plastic-waste-population-total}
+``` r
 # insert code here
 ```
 
-```{r plastic-waste-population-coastal}
+``` r
 # insert code here
 ```
 
@@ -92,7 +109,7 @@ Remove this text, and add your answer for Exercise 7 here.
 
 Remove this text, and add your answer for Exercise 8 here.
 
-```{r recreate-viz}
+``` r
 # insert code here
 ```
 
@@ -102,16 +119,11 @@ Remove this text, and add your answer for Exercise 8 here.
 
 Try this :D
 
-ggplot(data = plastic_waste, 
-       mapping = aes(x = continent, 
-                     y = plastic_waste_per_cap)) +
-  geom_violin()+
-  geom_boxplot(width=.3, fill="green") +
-  stat_summary(fun.y=median, geom="point") 
-  
-### Exercise 5 
+ggplot(data = plastic_waste, mapping = aes(x = continent, y =
+plastic_waste_per_cap)) + geom_violin()+ geom_boxplot(width=.3,
+fill=“green”) + stat_summary(fun.y=median, geom=“point”)
 
-Helpful reference:http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements
+### Exercise 5
 
-
-
+Helpful
+reference:<http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements>
