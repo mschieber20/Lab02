@@ -67,31 +67,64 @@ ggplot(data = plastic_waste,
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+Is it because color and fill relate directly to variables in the data
+set, whereas the alpha
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
-
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
 ```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_ydensity).
+
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+First time seeing this type of graph. Does a better job showing where
+countries within each continent cluster. For example, more countries in
+Africa are low in waste per capita, whereas there are ore countries in
+North America that are ‘higher’ in waste per capita than countries that
+are low.
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
+Visualize the relationship between plastic waste per capita and
+mismanaged plastic waste per capita using a scatterplot. Describe the
+relationship.
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste,
+           mapping = aes(x = mismanaged_plastic_waste_per_cap,
+                         y = plastic_waste_per_cap)) + 
+  geom_point()
 ```
+
+    ## Warning: Removed 51 rows containing missing values (geom_point).
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
+
+There appears to be a sharp linear trend.
 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
-
 ``` r
-# insert code here
+ggplot(data = plastic_waste,
+           mapping = aes(x = mismanaged_plastic_waste_per_cap,
+                         y = plastic_waste_per_cap,
+                         color = continent,
+                         fill = continent)) + 
+  geom_point()
 ```
+
+    ## Warning: Removed 51 rows containing missing values (geom_point).
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-continent-1.png)<!-- -->
+
+It appears that for Africa, as mismanagement increases, plastic waste
+increases.
 
 ### Exercise 7
 
