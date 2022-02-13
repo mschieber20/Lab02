@@ -92,18 +92,25 @@ ggplot(data = plastic_waste,
   geom_point()
 ```
 
-It appears that for Africa, as mismanagement increases, plastic waste increases.
+It appears that for Africa and Europe, as mismanagement increases, plastic waste increases.  
 
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
+Visualize the relationship between plastic waste per capita and total population as well as plastic waste per capita and coastal population. You will need to make two separate plots. Do either of these pairs of variables appear to be more strongly linearly associated?
 
 ```{r plastic-waste-population-total}
-# insert code here
+
+ggplot(data = plastic_waste,
+           mapping = aes(x = plastic_waste_per_cap,
+                         y = total_pop)) +
+  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(data = plastic_waste,
+           mapping = aes(x = plastic_waste_per_cap,
+                         y = coastal_pop)) +
+  geom_point()
 ```
 
 ### Exercise 8
